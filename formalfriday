@@ -1,2 +1,2 @@
-echo '#!/bin/sh
-> echo Formal Friday Jainish rocks!'
+#!/bin/sh
+echo "Formal Friday Jainish rocks!"
