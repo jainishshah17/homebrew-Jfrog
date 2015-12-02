@@ -7,6 +7,7 @@ class Artifactory < Formula
   bottle do
     cellar :any_skip_relocation
     sha256 "603c93daf53101b7336df6fe221529f4eed2db4876c2be2626b237c563c3eb77" => :el_capitan
+    sha256 "ee747e03b3fe8d6f1eae0e352cc180ceb16efd17d3c0cc87d5194fce1d475532" => :mavericks
   end
 
   option "with-low-heap", "Run artifactory with low Java memory options. Useful for development machines. Do not use in production."
