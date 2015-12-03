@@ -1,8 +1,8 @@
 class Artifactory < Formula
   desc "Manages binaries"
   homepage "https://www.jfrog.com/artifactory/"
-  url "https://dl.bintray.com/jfrog/artifactory/jfrog-artifactory-oss-4.0.2.zip"
-  sha256 "52a882b3681bc00eb73fddfe6abdc739156c2940be073406185be23a5f35bff2"
+  url "https://dl.bintray.com/jfrog/artifactory/jfrog-artifactory-oss-4.2.2.zip"
+  sha256 "4f180c0157875462e910b8acbe0c79b3427c38a5e5c90a1900d357958360e39f"
 
   bottle do
     cellar :any_skip_relocation
