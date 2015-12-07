@@ -6,10 +6,7 @@ class Artifactory < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "603c93daf53101b7336df6fe221529f4eed2db4876c2be2626b237c563c3eb77" => :el_capitan
-    sha256 "ee747e03b3fe8d6f1eae0e352cc180ceb16efd17d3c0cc87d5194fce1d475532" => :mavericks
-    sha256 "73a21b06794f7fa1f30d4bef735957d301b6483f6b52fa6e0aebca401991d4e4" => :yosemite
-    sha256 "603c93daf53101b7336df6fe221529f4eed2db4876c2be2626b237c563c3eb77" => :mountain_lion
+    sha256 "74a9cb15c5a34d852a0fc5b0c94fda27f5f9dc56a9bb2995321942da9c19bb01" => :el_capitan
   end
 
   option "with-low-heap", "Run artifactory with low Java memory options. Useful for development machines. Do not use in production."
@@ -23,13 +20,13 @@ class Artifactory < Formula
 
     # Set correct working directory
     inreplace "bin/artifactory.sh",
-      'export ARTIFACTORY_HOME="$(cd "$(dirname "${artBinDir}")" && pwd)"',
-      "export ARTIFACTORY_HOME=#{libexec}"
+              'export ARTIFACTORY_HOME="$(cd "$(dirname "${artBinDir}")" && pwd)"',
+              "export ARTIFACTORY_HOME=#{libexec}"
 
     # Reduce memory consumption for non production use
     inreplace "bin/artifactory.default",
-      "-server -Xms512m -Xmx2g",
-      "-Xms128m -Xmx768m" if build.with? "low-heap"
+              "-server -Xms512m -Xmx2g",
+              "-Xms128m -Xmx768m" if build.with? "low-heap"
 
     libexec.install Dir["*"]
 
