@@ -3,8 +3,8 @@
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
 class ArtifactoryCliGo < Formula
-  desc ""
-  homepage ""
+  desc "Artifactory CLI provides a command line interface for uploading and downloading artifacts to and from Artifactory. "
+  homepage "https://www.jfrog.com/artifactory/"
   url "https://github.com/JFrogDev/artifactory-cli-go/archive/1.2.0.zip"
   version "1.2.0"
   sha256 "805888fb3d61e4558aa47ec5cbd39d89004f2130ec3fa5252260eb34782f10e6"
@@ -17,9 +17,9 @@ class ArtifactoryCliGo < Formula
 
     # Remove unrecognized options if warned by configure
     system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+           "--disable-dependency-tracking",
+           "--disable-silent-rules",
+           "--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
     system "make", "install" # if this fails, try separate make/make install steps
   end
