@@ -1,13 +1,8 @@
 class Artifactory < Formula
   desc "Manages binaries"
   homepage "https://www.jfrog.com/artifactory/"
-  url "https://dl.bintray.com/jfrog/artifactory/jfrog-artifactory-oss-4.3.1.zip"
-  sha256 "599d2493aed0b74d518f0f2f0dbacc65ec0043924314b0307a40ce8fa0eb2d06"
-
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "74a9cb15c5a34d852a0fc5b0c94fda27f5f9dc56a9bb2995321942da9c19bb01" => :el_capitan
-  end
+  url "https://dl.bintray.com/jfrog/artifactory/jfrog-artifactory-oss-4.3.2.zip"
+  sha256 "276bcac51ef108f1272c4370575ca9b2e7d1545b7a581e5c7431ff65cf6bfde6"
 
   option "with-low-heap", "Run artifactory with low Java memory options. Useful for development machines. Do not use in production."
 
