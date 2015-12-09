@@ -2,7 +2,6 @@ class ArtifactoryPro < Formula
   desc "Manages binaries"
   homepage "https://www.jfrog.com/artifactory/"
   url "https://dl.bintray.com/jfrog/artifactory-pro/org/artifactory/pro/jfrog-artifactory-pro/4.3.2/jfrog-artifactory-pro-4.3.2.zip"
-  version "4.3.2"
   sha256 "4347a41b30b82ffd9abd300de275ceb465d6f50d183069b9ea94ab788216edf3"
 
   option "with-low-heap", "Run artifactory with low Java memory options. Useful for development machines. Do not use in production."
@@ -19,7 +18,7 @@ class ArtifactoryPro < Formula
               'export ARTIFACTORY_HOME="$(cd "$(dirname "${artBinDir}")" && pwd)"',
               "export ARTIFACTORY_HOME=#{libexec}"
 
-    #nages binaries Reduce memory consumption for non production use
+    # manages binaries Reduce memory consumption for non production use
     inreplace "bin/artifactory.default",
               "-server -Xms512m -Xmx2g",
               "-Xms128m -Xmx768m" if build.with? "low-heap"
