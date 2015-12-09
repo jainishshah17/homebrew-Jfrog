@@ -1,35 +1,22 @@
 class ArtifactoryCliGo < Formula
-  desc "Artifactory CLI provides a command line interface for uploading and downloading artifacts to and from Artifactory. "
-  homepage "https://www.jfrog.com/artifactory/"
-  url "https://github.com/JFrogDev/artifactory-cli-go/archive/1.2.0.zip"
+  desc "Artifactory CLI provides a command line interface for uploading and downloading artifacts to and from Artifactory."
+  homepage "https://github.com/JFrogDev/artifactory-cli-go"
+  url "https://bintray.com/artifact/download/jfrog/artifactory-cli-go/1.2.0/artifactory-cli-mac-386/art"
   version "1.2.0"
-  sha256 "805888fb3d61e4558aa47ec5cbd39d89004f2130ec3fa5252260eb34782f10e6"
+  sha256 "79f3084291a4d54cfbf72dc1bbd16e14097077aa52897ed9b4e6fcf448758776"
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
+    #install artifactory-cli in
+    bin.install "art"
 
-    # Remove unrecognized options if warned by configure
-    system "./configure", "--disable-debug",
-           "--disable-dependency-tracking",
-           "--disable-silent-rules",
-           "--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
-    system "make", "install" # if this fails, try separate make/make install steps
+    bin.install_symlink libexec/"bin/art"
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! It's enough to just replace
-    # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test artifactory-cli-go`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    system bin/"art", "--version"
   end
 end
