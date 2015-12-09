@@ -4,6 +4,9 @@ class ArtifactoryPro < Formula
   url "https://dl.bintray.com/jfrog/artifactory-pro/org/artifactory/pro/jfrog-artifactory-pro/4.3.2/jfrog-artifactory-pro-4.3.2.zip"
   sha256 "4347a41b30b82ffd9abd300de275ceb465d6f50d183069b9ea94ab788216edf3"
 
+  bottle do
+    sha256 "7d1ff7225fe5f76efad0390e3b3d25bfb5ce9c6646a5ca5aab92684038811a0f" => :el_capitan
+  end
   option "with-low-heap", "Run artifactory with low Java memory options. Useful for development machines. Do not use in production."
 
   depends_on :java => "1.8+"
