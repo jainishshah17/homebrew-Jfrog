@@ -5,9 +5,6 @@ class ArtifactoryCliGo < Formula
   version "1.2.0"
   sha256 "79f3084291a4d54cfbf72dc1bbd16e14097077aa52897ed9b4e6fcf448758776"
 
-  # depends_on "cmake" => :build
-  depends_on :x11 # if your formula requires any X11/XQuartz components
-
   def install
     #install artifactory-cli in
     bin.install "art"
