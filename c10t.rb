@@ -47,4 +47,3 @@ class C10t < Formula
     system "#{bin}/c10t", "--list-colors"
   end
 end
-Status API Training Shop Blog About Pricing
